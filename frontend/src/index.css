@@ -1,0 +1,159 @@
+/* ============================================
+   RPO RECRUIT AI — Design System
+   Aesthetic: Clean Corporate with Editorial Flair
+   Fonts: Playfair Display (display) + DM Sans (body)
+   ============================================ */
+
+:root {
+  /* ---- Color Palette ---- */
+  --ink-900: #0a0f1c;
+  --ink-800: #141b2d;
+  --ink-700: #1e2a3e;
+  --ink-600: #2d3a50;
+  --ink-500: #4a5568;
+  --ink-400: #718096;
+  --ink-300: #a0aec0;
+  --ink-200: #cbd5e0;
+  --ink-100: #e8ecf1;
+  --ink-50: #f4f6f9;
+
+  --accent-600: #1a5c3a;
+  --accent-500: #217a4b;
+  --accent-400: #2a9d5e;
+  --accent-300: #5cb882;
+  --accent-200: #a3d9b8;
+  --accent-100: #d4eedf;
+  --accent-50: #eef8f2;
+
+  --warm-500: #c4813a;
+  --warm-400: #d4974e;
+  --warm-100: #faf0e4;
+
+  --white: #ffffff;
+  --error: #c53030;
+  --error-light: #fff5f5;
+
+  /* ---- Typography ---- */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ---- Spacing ---- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 1px 3px rgba(10, 15, 28, 0.06);
+  --shadow-md: 0 4px 16px rgba(10, 15, 28, 0.08);
+  --shadow-lg: 0 12px 40px rgba(10, 15, 28, 0.12);
+  --shadow-xl: 0 24px 60px rgba(10, 15, 28, 0.16);
+
+  /* ---- Transitions ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 180ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink-800);
+  background: var(--ink-50);
+  line-height: 1.6;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---- Utility Animations ---- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}

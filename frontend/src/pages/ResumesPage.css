@@ -1,0 +1,419 @@
+/* ============================================
+   Resumes Page
+   ============================================ */
+
+.resumes-page {
+  max-width: 1200px;
+}
+
+/* ---- Stats Row ---- */
+.resume-stats-row {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.resume-stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: 24px;
+  font-size: 0.82rem;
+  color: var(--ink-500);
+}
+
+.resume-stat-pill strong {
+  color: var(--ink-800);
+}
+
+.resume-stat-pill svg {
+  color: var(--ink-300);
+}
+
+.resume-stat-pill.processed svg {
+  color: var(--accent-500);
+}
+
+.resume-stat-pill.processing svg {
+  color: var(--warm-500);
+}
+
+/* ---- Resume Table ---- */
+.resume-table-wrapper {
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.resume-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.resume-table thead {
+  background: var(--ink-50);
+}
+
+.resume-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-400);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--ink-100);
+  white-space: nowrap;
+}
+
+.resume-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--ink-50);
+  vertical-align: middle;
+}
+
+.resume-row {
+  transition: background var(--duration-fast);
+}
+
+.resume-row:hover {
+  background: var(--ink-50);
+}
+
+.resume-row:last-child td {
+  border-bottom: none;
+}
+
+/* Candidate cell */
+.resume-candidate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resume-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ink-700);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.resume-name {
+  display: block;
+  font-weight: 600;
+  color: var(--ink-800);
+  font-size: 0.85rem;
+}
+
+.resume-file {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--ink-300);
+  margin-top: 1px;
+}
+
+.resume-role {
+  color: var(--ink-600);
+  font-size: 0.83rem;
+}
+
+/* Skills in table */
+.resume-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.skill-more {
+  background: var(--ink-100);
+  color: var(--ink-500);
+  font-weight: 600;
+}
+
+/* Match score */
+.match-score {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.match-pending {
+  color: var(--ink-300);
+  font-size: 0.85rem;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.status-processed {
+  background: var(--accent-50);
+  color: var(--accent-600);
+}
+
+.status-processing {
+  background: var(--warm-100);
+  color: var(--warm-500);
+}
+
+.status-failed {
+  background: var(--error-light);
+  color: var(--error);
+}
+
+.resume-time {
+  font-size: 0.78rem;
+  color: var(--ink-300);
+  white-space: nowrap;
+}
+
+/* Actions */
+.resume-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: var(--ink-300);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  transition: color var(--duration-fast), background var(--duration-fast);
+}
+
+.action-btn:hover {
+  color: var(--ink-700);
+  background: var(--ink-50);
+}
+
+/* ---- Upload Modal ---- */
+.upload-dropzone {
+  border: 2px dashed var(--ink-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--duration-fast),
+              background var(--duration-fast);
+  margin-bottom: var(--space-lg);
+}
+
+.upload-dropzone:hover {
+  border-color: var(--accent-400);
+  background: var(--accent-50);
+}
+
+.upload-dropzone.active {
+  border-color: var(--accent-400);
+  background: var(--accent-50);
+}
+
+.upload-dropzone svg {
+  color: var(--ink-300);
+  margin-bottom: var(--space-sm);
+}
+
+.upload-dropzone h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink-700);
+  margin-bottom: 4px;
+}
+
+.upload-dropzone p {
+  font-size: 0.85rem;
+  color: var(--ink-400);
+  margin-bottom: var(--space-sm);
+}
+
+.upload-formats {
+  font-size: 0.72rem;
+  color: var(--ink-300);
+  background: var(--ink-50);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* File list */
+.upload-file-list {
+  margin-bottom: var(--space-lg);
+}
+
+.upload-file-count {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-500);
+  margin-bottom: var(--space-sm);
+}
+
+.upload-file-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--ink-50);
+  border-radius: var(--radius-sm);
+  margin-bottom: 6px;
+}
+
+.upload-file-item svg:first-child {
+  color: var(--accent-500);
+  flex-shrink: 0;
+}
+
+.upload-file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.upload-file-name {
+  display: block;
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--ink-700);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.upload-file-size {
+  font-size: 0.72rem;
+  color: var(--ink-400);
+}
+
+.upload-file-remove {
+  background: none;
+  border: none;
+  color: var(--ink-300);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  transition: color var(--duration-fast), background var(--duration-fast);
+}
+
+.upload-file-remove:hover {
+  color: var(--error);
+  background: var(--error-light);
+}
+
+/* Info box */
+.upload-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #e6f1fb;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.upload-info-box svg {
+  color: #185fa5;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.upload-info-box p {
+  font-size: 0.8rem;
+  color: #185fa5;
+  line-height: 1.5;
+}
+
+/* ---- Resume Detail Modal ---- */
+.detail-header-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.detail-avatar-lg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--ink-700);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.detail-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: var(--space-xl);
+}
+
+.detail-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--ink-50);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: var(--ink-600);
+}
+
+.detail-contact-item svg {
+  color: var(--accent-500);
+  flex-shrink: 0;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 900px) {
+  .resume-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .resume-table {
+    min-width: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .resume-stats-row {
+    flex-direction: column;
+  }
+
+  .detail-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,583 @@
+/* ============================================
+   Candidates Page
+   ============================================ */
+
+.candidates-page {
+  max-width: 1200px;
+}
+
+/* ---- Job Selector ---- */
+.job-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: var(--white);
+  border: 1.5px solid var(--accent-200);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+.job-selector-icon {
+  color: var(--accent-500);
+  flex-shrink: 0;
+}
+
+.job-selector-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink-500);
+  white-space: nowrap;
+}
+
+.job-selector-select {
+  flex: 1;
+  appearance: none;
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-900);
+  cursor: pointer;
+  outline: none;
+  padding-right: 24px;
+}
+
+.job-selector-chevron {
+  position: absolute;
+  right: 16px;
+  color: var(--ink-300);
+  pointer-events: none;
+}
+
+/* ---- Candidate Cards ---- */
+.candidate-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.candidate-card {
+  display: flex;
+  background: var(--white);
+  border: 1px solid var(--ink-100);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.candidate-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Rank stripe */
+.candidate-card-rank {
+  width: 48px;
+  background: var(--ink-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink-400);
+  flex-shrink: 0;
+  border-right: 1px solid var(--ink-100);
+}
+
+.candidate-card:nth-child(1) .candidate-card-rank {
+  background: linear-gradient(135deg, #faeeda, #faf0e4);
+  color: #854f0b;
+}
+
+.candidate-card:nth-child(2) .candidate-card-rank {
+  background: linear-gradient(135deg, var(--ink-50), var(--ink-100));
+  color: var(--ink-500);
+}
+
+.candidate-card:nth-child(3) .candidate-card-rank {
+  background: linear-gradient(135deg, #faece7, #faf0e4);
+  color: #993c1d;
+}
+
+.candidate-card-main {
+  flex: 1;
+  padding: var(--space-lg);
+}
+
+/* Top area */
+.candidate-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: 10px;
+}
+
+.candidate-card-identity {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.candidate-card-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink-700);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.candidate-card-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink-900);
+  margin-bottom: 2px;
+}
+
+.candidate-card-role {
+  font-size: 0.82rem;
+  color: var(--ink-500);
+  margin-bottom: 4px;
+}
+
+.candidate-card-meta-row {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.candidate-card-meta-row span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--ink-400);
+}
+
+/* Score circle */
+.candidate-card-score-area {
+  flex-shrink: 0;
+}
+
+.candidate-score-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.candidate-score-circle.score-excellent {
+  background: var(--accent-50);
+  border: 2px solid var(--accent-300);
+}
+
+.candidate-score-circle.score-good {
+  background: #e6f1fb;
+  border: 2px solid #85b7eb;
+}
+
+.candidate-score-circle.score-fair {
+  background: var(--warm-100);
+  border: 2px solid var(--warm-400);
+}
+
+.candidate-score-circle.score-low {
+  background: var(--ink-50);
+  border: 2px solid var(--ink-200);
+}
+
+.candidate-score-circle.score-poor {
+  background: var(--error-light);
+  border: 2px solid #f09595;
+}
+
+.score-number {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-excellent .score-number { color: var(--accent-600); }
+.score-good .score-number { color: #185fa5; }
+.score-fair .score-number { color: var(--warm-500); }
+.score-low .score-number { color: var(--ink-500); }
+.score-poor .score-number { color: var(--error); }
+
+.score-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 1px;
+}
+
+.score-excellent .score-label { color: var(--accent-500); }
+.score-good .score-label { color: #378add; }
+.score-fair .score-label { color: var(--warm-400); }
+.score-low .score-label { color: var(--ink-400); }
+.score-poor .score-label { color: var(--error); }
+
+/* Matched job */
+.candidate-matched-job {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--ink-500);
+  padding: 5px 12px;
+  background: var(--accent-50);
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.candidate-matched-job svg {
+  color: var(--accent-500);
+}
+
+.candidate-matched-job strong {
+  color: var(--accent-600);
+}
+
+/* Skills match section */
+.candidate-card-skills-section {
+  margin-bottom: 12px;
+}
+
+.skills-match-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.skills-match-icon {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.skills-match-icon.match {
+  color: var(--accent-500);
+}
+
+.skills-match-icon.missing {
+  color: var(--ink-300);
+}
+
+.skills-match-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.skill-matched {
+  background: var(--accent-50);
+  color: var(--accent-600);
+  border-color: var(--accent-200);
+}
+
+.skill-missing {
+  background: var(--ink-50);
+  color: var(--ink-400);
+  border-color: var(--ink-100);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Footer */
+.candidate-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--ink-50);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.candidate-card-footer-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.candidate-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.status-new {
+  background: #e6f1fb;
+  color: #185fa5;
+}
+
+.status-shortlisted {
+  background: var(--accent-50);
+  color: var(--accent-600);
+}
+
+.status-interview {
+  background: #eeedfe;
+  color: #534ab7;
+}
+
+.status-rejected {
+  background: var(--error-light);
+  color: var(--error);
+}
+
+.candidate-applied-date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--ink-300);
+}
+
+.candidate-card-footer-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-small {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.btn-outline {
+  background: var(--white);
+  color: var(--ink-600);
+  border: 1.5px solid var(--ink-200);
+}
+
+.btn-outline:hover {
+  background: var(--ink-50);
+  border-color: var(--ink-300);
+}
+
+.btn-accent {
+  background: var(--accent-500);
+  color: var(--white);
+  border: 1.5px solid var(--accent-500);
+}
+
+.btn-accent:hover {
+  background: var(--accent-600);
+  border-color: var(--accent-600);
+}
+
+/* ---- Detail Modal extras ---- */
+.candidate-score-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.candidate-score-badge.score-excellent {
+  background: var(--accent-50);
+  color: var(--accent-600);
+}
+
+.candidate-score-badge.score-good {
+  background: #e6f1fb;
+  color: #185fa5;
+}
+
+.candidate-score-badge.score-fair {
+  background: var(--warm-100);
+  color: var(--warm-500);
+}
+
+/* Match breakdown */
+.match-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.match-breakdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--ink-50);
+  border-radius: var(--radius-sm);
+}
+
+.match-breakdown-item svg {
+  flex-shrink: 0;
+}
+
+.match-breakdown-item:nth-child(1) svg { color: var(--accent-500); }
+.match-breakdown-item:nth-child(2) svg { color: var(--ink-300); }
+.match-breakdown-item:nth-child(3) svg { color: #534ab7; }
+
+.breakdown-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--ink-400);
+}
+
+.breakdown-value {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.breakdown-value.matched { color: var(--accent-600); }
+.breakdown-value.missing { color: var(--ink-500); }
+
+/* All job matches */
+.all-job-matches {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job-match-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.job-match-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.job-match-info svg {
+  color: var(--ink-300);
+}
+
+.job-match-title {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink-700);
+}
+
+.job-match-bar-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.job-match-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--ink-50);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.job-match-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width var(--duration-slow) var(--ease-out);
+}
+
+.job-match-bar-fill.score-excellent { background: var(--accent-500); }
+.job-match-bar-fill.score-good { background: #378add; }
+.job-match-bar-fill.score-fair { background: var(--warm-500); }
+.job-match-bar-fill.score-low { background: var(--ink-300); }
+.job-match-bar-fill.score-poor { background: var(--error); }
+
+.job-match-score {
+  font-size: 0.82rem;
+  font-weight: 700;
+  min-width: 38px;
+  text-align: right;
+}
+
+.job-match-score.score-excellent { color: var(--accent-600); }
+.job-match-score.score-good { color: #185fa5; }
+.job-match-score.score-fair { color: var(--warm-500); }
+.job-match-score.score-low { color: var(--ink-500); }
+.job-match-score.score-poor { color: var(--error); }
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 900px) {
+  .candidate-card-top {
+    flex-direction: column;
+  }
+
+  .candidate-card-score-area {
+    align-self: flex-start;
+  }
+
+  .job-match-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .job-match-info {
+    min-width: auto;
+  }
+
+  .job-match-bar-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .candidate-card-rank {
+    display: none;
+  }
+
+  .candidate-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .candidate-card-footer-actions {
+    width: 100%;
+  }
+
+  .btn-small {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .candidate-score-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .score-number {
+    font-size: 0.95rem;
+  }
+}
